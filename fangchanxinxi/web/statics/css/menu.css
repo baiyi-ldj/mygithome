@@ -1,0 +1,70 @@
+#menu_01{
+   margin:auto;
+    border: black 1px solid;
+    width: 700px;
+    height: 500px;
+}
+li{
+    list-style: none;
+}
+ul li{
+   line-height: 3em;
+}
+ul{
+    margin-top: 50px;
+}
+#wh{
+    margin-left: 41px;
+}
+#menu_02{
+    border: blue 3px solid;
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    left: 580px;
+    top: 70px;
+}
+#add form{
+    text-align: left;
+    line-height: 2em;
+}
+#add {
+position: absolute;
+    top: 80px;
+    left: 150px;
+}
+#dl{
+   margin-left:100px;
+}
+#biaoti_01{
+text-align: center;
+    margin-top: 180px;
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+.loginForm{
+    float: right;
+}
+.aaaa{
+    position: absolute;
+    top: 25px;
+    right: 20px;
+}
+.count{
+    margin: 100px;
+}
+.fenye{
+    position: absolute;
+    top:300px;
+    right: 150px;
+}
+#getlist{
+    margin-left: 120px;
+    margin-top: 2px;
+}
+.table_b{
+    margin-left: 14px;
+    font-size: 13px;
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace本来可以随意命名，后期mapper代理，要求namespace跟接口保持一致 -->
+<mapper namespace="cn.dao.users.UsersDao">
+	<!--&lt;!&ndash;登录&ndash;&gt;
+	<select id="login" resultType="users">
+		select * from users where userName=#{userName} and password=#{password}
+	</select>-->
+	<!--注册-->
+	<insert id="regin" parameterType="users" >
+		INSERT INTO users VALUES(#{cardId},#{name},#{gender},DEFAULT,#{password},1)
+	</insert>
+	<!--验证身份证号是否重复-->
+	<select id="selectCid" resultType="users" parameterType="string">
+		SELECT * FROM users WHERE cardId=#{cardId}
+	</select>
+	<!--登录-->
+	<select id="login" resultType="users">
+		select * from users where cardId=#{cardId} and password=#{password}
+	</select>
+
+</mapper>

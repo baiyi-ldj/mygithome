@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace本来可以随意命名，后期mapper代理，要求namespace跟接口保持一致 -->
+<mapper namespace="cn.dao.real_estate.real_estateDao">
+	<!--查询总条数-->
+	<select id="getCont" resultType="int">
+		SELECT COUNT(*) FROM real_estate r INNER JOIN users u ON r.cardId=u.cardId
+		<where>
+			<if test="name!=null and name !=''">
+				u.name=#{name}
+			</if>
+
+			<if test="cardId!=null and cardId !=''">
+				r.cardId=#{cardId}
+			</if>
+		</where>
+	</select>
+	<!--分页查询-->
+	<select id="getListReal_estate" resultMap="getList">
+		SELECT r.id,r.projectName,u.name,r.cardId,r.houseType,r.area,r.buildTime FROM real_estate r INNER JOIN users u ON r.cardId=u.cardId
+		<where>
+		<if test="name!=null and name !=''">
+			u.name=#{name}
+		</if>
+
+		<if test="cardId!=null and cardId !=''">
+			r.cardId=#{cardId}
+		</if>
+		</where>
+		ORDER BY r.buildTime ASC LIMIT #{qi},#{shi}
+
+	</select>
+	<resultMap id="getList" type="real_estate">
+		<result property="name" column="name"/>
+	</resultMap>
+
+</mapper>

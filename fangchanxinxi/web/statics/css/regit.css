@@ -1,0 +1,26 @@
+#login{
+    margin-top: 200px;
+    margin-left: 500px;
+    border:1px black solid;
+    width: 500px;
+    height:300px;
+    background: aqua;
+}
+form{
+    text-align: right;
+    margin-top: 80px;
+    margin-right: 150px;
+    line-height: 2em;
+}
+.subBtn{
+    margin-right:60px;
+}
+.aaa{
+    position: absolute;
+    right: 730px;
+    top:200px;
+}
+#n{
+    position: absolute;
+    left: 870px;
+}
